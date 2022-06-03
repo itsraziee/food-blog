@@ -34,9 +34,9 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" placeholder="Password" required autocomplete="new-password">
+                        <input id="password" type="text" class="form-input w-full @error('domain') border-red-500 @enderror" name="domain" placeholder="Domain" required autocomplete="domain">
 
-                        @error('password')
+                        @error('domain')
                         <p class="text-red-500 text-xs italic mt-4">
                             {{ $message }}
                         </p>
@@ -45,6 +45,16 @@
 
                     <div class="flex flex-wrap">
                         <input id="password-confirm" type="password" class="form-input w-full " name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                    </div>
+
+                    <div class="flex flex-wrap">
+                        <input id="domain" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" placeholder="Password" required autocomplete="new-password">
+
+                        @error('password')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
                     </div>
 
                     <div class="flex flex-wrap">
