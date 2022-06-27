@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +15,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', [PagesController::class, 'index']);
-Route::get('/register', [AuthController::class, 'index']);
+
+Auth::routes();
+
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
