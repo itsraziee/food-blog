@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\AuthController;
+
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -35,7 +36,7 @@ Route::middleware([
     InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
 ])->prefix('/api')->group(function () {
-    Route::post('/login', [AuthController::class, "login"]);
+    Route::post('/login', [LoginController::class, "login"]);
     Route::get('/posts', [PostController::class, "index"]);
 
     Route::group(["middleware" => ["auth:sanctum"]], function () {
