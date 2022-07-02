@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div class="flex flex-wrap">
-                        <input id="password" type="text" class="form-input w-full @error('domain') border-red-500 @enderror" name="domain" placeholder="Domain" required autocomplete="domain">
+                        <input id="domain" type="text" class="form-input w-full @error('domain') border-red-500 @enderror" name="domain" placeholder="Domain" required autocomplete="domain">
 
                         @error('domain')
                         <p class="text-red-500 text-xs italic mt-4">
